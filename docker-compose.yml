@@ -10,6 +10,9 @@ services:
       - 9000:9000
     volumes:
       - hadoop_namenode:/hadoop/dfs/name
+      - type: bind
+        source: ./lab_data
+        target: /hadoop-data
     environment:
       - CLUSTER_NAME=test
     env_file:
